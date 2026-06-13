@@ -53,6 +53,25 @@ Put-Call Parity check: confirmed (error < 1e-10)
 
 ---
 
+## Visualizations
+
+### Option Price vs Stock Price
+Call and put prices plotted across a range of stock prices (S = 50 to 150), with the strike price marked at K = 100.
+
+![Option Price vs Stock Price](assets/price_vs_spot.png)
+
+### Greeks vs Stock Price
+Four-panel plot showing Delta, Gamma, Vega, and Theta for both call and put options across the same stock price range. Notable features: Delta S-curve, Gamma bell curve peaking at the strike, and Vega symmetry.
+
+![Greeks vs Stock Price](assets/greeks_vs_spot.png)
+
+### Monte Carlo Convergence
+Log-scale convergence plot showing the Monte Carlo price approaching the Black-Scholes value as simulations increase from 100 to 100,000, with 95% confidence interval bands narrowing throughout.
+
+![Monte Carlo Convergence](assets/mc_convergence.png)
+
+---
+
 ## Project Structure
 
 ```
@@ -62,23 +81,11 @@ options-pricing-engine/
 │   ├── monte_carlo.py     — Monte Carlo simulation engine
 │   ├── greeks.py          — Greeks computation
 │   └── analysis.py        — Visualization and comparison
+├── assets/                — Charts and images for README
 ├── outputs/               — Generated charts (gitignored)
 ├── tests/
 └── README.md
 ```
-
----
-
-## Visualizations
-
-### Option Price vs Stock Price
-Call and put prices plotted across a range of stock prices (S = 50 to 150), with strike price marked.
-
-### Greeks vs Stock Price
-Four-panel plot showing Delta, Gamma, Vega, and Theta for both call and put options across the same stock price range.
-
-### Monte Carlo Convergence
-Log-scale convergence plot showing Monte Carlo price approaching the Black-Scholes value as simulations increase from 100 to 100,000, with 95% confidence interval bands.
 
 ---
 
@@ -87,7 +94,7 @@ Log-scale convergence plot showing Monte Carlo price approaching the Black-Schol
 Requirements: Python 3.10+
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/options-pricing-engine.git
+git clone https://github.com/stuxxxnett/options-pricing-engine.git
 cd options-pricing-engine
 python -m venv venv
 venv\Scripts\activate
