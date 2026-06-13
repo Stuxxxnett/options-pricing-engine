@@ -2,6 +2,8 @@
 
 A Python-based quantitative finance tool that prices European options using two independent methods — the closed-form Black-Scholes formula and Monte Carlo simulation — then compares them. Includes computation of all five major Greeks for risk analysis.
 
+**Live Demo:** https://options-pricing-engine-ishaan.streamlit.app
+
 ---
 
 ## Methods Implemented
@@ -56,7 +58,7 @@ Put-Call Parity check: confirmed (error < 1e-10)
 ## Visualizations
 
 ### Option Price vs Stock Price
-Call and put prices plotted across a range of stock prices (S = 50 to 150), with the strike price marked at K = 100.
+Call and put prices plotted across a range of stock prices (S = 50 to 150), with strike price marked at K = 100.
 
 ![Option Price vs Stock Price](assets/price_vs_spot.png)
 
@@ -84,6 +86,8 @@ options-pricing-engine/
 ├── assets/                — Charts and images for README
 ├── outputs/               — Generated charts (gitignored)
 ├── tests/
+├── app.py                 — Streamlit web application
+├── requirements.txt
 └── README.md
 ```
 
@@ -98,7 +102,7 @@ git clone https://github.com/stuxxxnett/options-pricing-engine.git
 cd options-pricing-engine
 python -m venv venv
 venv\Scripts\activate
-pip install numpy scipy matplotlib plotly streamlit
+pip install -r requirements.txt
 ```
 
 Run individual modules:
@@ -109,6 +113,12 @@ python black_scholes.py    # BS pricing + parity check
 python monte_carlo.py      # MC simulation + comparison
 python greeks.py           # Greeks computation
 python analysis.py         # Generate all charts
+```
+
+Run the web app locally:
+
+```bash
+streamlit run app.py
 ```
 
 ---
